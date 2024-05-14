@@ -1,5 +1,5 @@
 # Inertia
-The repository for the game I did as a project of end of year.
+The repository for the game I did as a project of end of year. /n
 #**tutoriel d’installation**
 Pas d'installation requise
 #**installation des dépendances**
