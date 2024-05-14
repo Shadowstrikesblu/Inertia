@@ -46,6 +46,7 @@ public class PlayerMotor : MonoBehaviour
         {
             // Gradually slow down the player (slide)
             playerSpeed = Mathf.Lerp(playerSpeed, 0, deceleration * Time.deltaTime);
+            // playerSpeed -= deceleration * Time.deltaTime;
         }
 
         controller.Move(transform.TransformDirection(moveDirection) * playerSpeed * Time.deltaTime);

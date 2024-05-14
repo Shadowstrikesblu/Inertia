@@ -1,15 +1,7 @@
-using System.Collections;
-
-using System.Collections.Generic;
-
 using UnityEngine;
-
-using UnityEngine.InputSystem;
 
 
 public class InputManager : MonoBehaviour
-
-
 {
     private PlayerInput playerInput;
     public PlayerInput.OnFootActions onFoot;
@@ -20,7 +12,6 @@ public class InputManager : MonoBehaviour
     public bool Attack;
     public bool Fire { get; private set; }
 
-    // Start is called before the first frame update
 
     void Awake()
     {

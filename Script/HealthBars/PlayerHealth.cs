@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -50,7 +51,11 @@ public class PlayerHealth : MonoBehaviour
         {
             if (health < 30)
             {
-                return;
+                if (health <= 0)
+                {
+                    Debug.Log("Player is dead");
+                    SceneManager.LoadScene("EndScene");
+                }
             }
             durationTimer += Time.deltaTime;
             if (durationTimer > duration)
@@ -70,15 +75,11 @@ public class PlayerHealth : MonoBehaviour
                 healOverlay.color = new Color(healOverlay.color.r, healOverlay.color.g, healOverlay.color.b, tempAplha);
             }
         }
-        // UpdateTextUI();
+
     }
-    // public void UpdateTextUI()
-    // {
-    //     healthText.text = "health " + health;
-    // }
+
     public void UpdateHealthUI()
     {
-        // Debug.Log("health: " + health);
         float fillF = FrontHealthBar.fillAmount;
         float fillB = BackHealthBar.fillAmount;
         float hFraction = health / maxHealth;

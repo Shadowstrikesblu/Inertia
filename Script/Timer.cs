@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -17,5 +18,10 @@ public class Timer : MonoBehaviour
         int minutes = Mathf.FloorToInt(elapsedTime / 60F);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
         timerText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+
+        if (elapsedTime <= 0)
+        {
+            SceneManager.LoadScene("GoodJobScene");
+        }
     }
 }
